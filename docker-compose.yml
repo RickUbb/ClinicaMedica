@@ -1,0 +1,254 @@
+version: '3.8'
+
+services:
+  config-service:
+    build: ./microservice-config
+    ports:
+      - "8888:8888"
+    networks:
+      - msvc-network
+    restart: always
+
+  eureka-service:
+    build: ./microservice-eureka
+    ports:
+      - "8761:8761"
+    depends_on:
+      - config-service
+    networks:
+      - msvc-network
+    restart: always
+
+  gateway-service:
+    build: ./microservice-gateway
+    ports:
+      - "8080:8080"
+    depends_on:
+      - eureka-service
+      - admin-service
+      - appointment-service
+      - billing-service
+      - doctor-service
+      - medicalrecord-service
+      - notification-service
+      - patient-service
+    networks:
+      - msvc-network
+    restart: always
+
+  admin-service:
+    build: ./microservice-admin
+    ports:
+      - "8097:8097"
+    depends_on:
+      - admin-db
+      - eureka-service
+    environment:
+      - SPRING_CLOUD_CONFIG_URI=http://config-service:8888
+      - SPRING_PROFILES_ACTIVE=default
+    networks:
+      - msvc-network
+    restart: always
+
+  admin-db:
+    image: mysql:8.0
+    environment:
+      MYSQL_DATABASE: adminDB
+      MYSQL_ROOT_PASSWORD: 1234
+    ports:
+      - "3306:3306"
+    networks:
+      - msvc-network
+    restart: always
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  appointment-service:
+    build: ./microservice-appointment
+    ports:
+      - "8093:8093"
+    depends_on:
+      - appointment-db
+      - eureka-service
+    environment:
+      - SPRING_CLOUD_CONFIG_URI=http://config-service:8888
+      - SPRING_PROFILES_ACTIVE=default
+    networks:
+      - msvc-network
+    restart: always
+
+  appointment-db:
+    image: mysql:8.0
+    environment:
+      MYSQL_DATABASE: appointmentDB
+      MYSQL_ROOT_PASSWORD: 1234
+    ports:
+      - "3315:3306"
+    networks:
+      - msvc-network
+    restart: always
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  billing-service:
+    build: ./microservice-billing
+    ports:
+      - "8094:8094"
+    depends_on:
+      - billing-db
+      - eureka-service
+    environment:
+      - SPRING_CLOUD_CONFIG_URI=http://config-service:8888
+      - SPRING_PROFILES_ACTIVE=default
+    networks:
+      - msvc-network
+    restart: always
+
+  billing-db:
+    image: postgres:14
+    environment:
+      POSTGRES_DB: billingDB
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 1234
+    ports:
+      - "5433:5432"
+    networks:
+      - msvc-network
+    restart: always
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  doctor-service:
+    build: ./microservice-doctor
+    ports:
+      - "8092:8092"
+    depends_on:
+      - doctor-db
+      - eureka-service
+    environment:
+      - SPRING_CLOUD_CONFIG_URI=http://config-service:8888
+      - SPRING_PROFILES_ACTIVE=default
+    networks:
+      - msvc-network
+    restart: always
+
+  doctor-db:
+    image: postgres:14
+    environment:
+      POSTGRES_DB: doctorDB
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 1234
+    ports:
+      - "5432:5432"
+    networks:
+      - msvc-network
+    restart: always
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  medicalrecord-service:
+    build: ./microservice-medicalrecord
+    ports:
+      - "8095:8095"
+    depends_on:
+      - medicalrecord-db
+      - eureka-service
+    environment:
+      - SPRING_CLOUD_CONFIG_URI=http://config-service:8888
+      - SPRING_PROFILES_ACTIVE=default
+    networks:
+      - msvc-network
+    restart: always
+
+  medicalrecord-db:
+    image: mysql:8.0
+    environment:
+      MYSQL_DATABASE: medicalrecordDB
+      MYSQL_ROOT_PASSWORD: 1234
+    ports:
+      - "3308:3306"
+    networks:
+      - msvc-network
+    restart: always
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  notification-service:
+    build: ./microservice-notification
+    ports:
+      - "8096:8096"
+    depends_on:
+      - notification-db
+      - eureka-service
+    environment:
+      - SPRING_CLOUD_CONFIG_URI=http://config-service:8888
+      - SPRING_PROFILES_ACTIVE=default
+    networks:
+      - msvc-network
+    restart: always
+
+  notification-db:
+    image: postgres:14
+    environment:
+      POSTGRES_DB: notificationDB
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 1234
+    ports:
+      - "5434:5432"
+    networks:
+      - msvc-network
+    restart: always
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  patient-service:
+    build: ./microservice-patient
+    ports:
+      - "8091:8091"
+    depends_on:
+      - patient-db
+      - eureka-service
+    environment:
+      - SPRING_CLOUD_CONFIG_URI=http://config-service:8888
+      - SPRING_PROFILES_ACTIVE=default
+    networks:
+      - msvc-network
+    restart: always
+
+  patient-db:
+    image: mysql:8.0
+    environment:
+      MYSQL_DATABASE: patientDB
+      MYSQL_ROOT_PASSWORD: 1234
+    ports:
+      - "3309:3306"
+    networks:
+      - msvc-network
+    restart: always
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+networks:
+  msvc-network:
+    driver: bridge

@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: msvc-eureka
+  config:
+    import: optional:configserver:http://config-service:8888
+eureka:
+  instance:
+    hostname: eureka-service
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://eureka-service:8761/eureka/
+server:
+  port: 8761
+
+

@@ -1,0 +1,23 @@
+server:
+  port: 8093
+
+spring:
+  application:
+    name: msvc-appointment
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://appointment-db:3306/appointmentDB
+    username: root
+    password: 1234
+  jpa:
+    hibernate:
+     ddl-auto: create
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://eureka-service:8761/eureka/

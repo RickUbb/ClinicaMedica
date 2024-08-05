@@ -1,0 +1,531 @@
+{
+	"info": {
+		"_postman_id": "fde5c010-47ac-4f51-8d20-0468efe174ac",
+		"name": "Proyect Distributed",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27985625"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8097/api/v1/admins",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8097/api/v1/admins",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8097",
+					"path": [
+						"api",
+						"v1",
+						"admins"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8097/api/v1/admins/crear",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"admin1\",\r\n    \"password\": \"password1\",\r\n    \"role\": \"ROLE_ADMIN\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8097/api/v1/admins/crear",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8097",
+					"path": [
+						"api",
+						"v1",
+						"admins",
+						"crear"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8097/api/v1/admins/1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8097/api/v1/admins/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8097",
+					"path": [
+						"api",
+						"v1",
+						"admins",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8097/api/v1/admins/update/1",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"updatedadmin\",\r\n  \"password\": \"updatedpassword\",\r\n  \"role\": \"SUPER_ADMIN\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8097/api/v1/admins/update/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8097",
+					"path": [
+						"api",
+						"v1",
+						"admins",
+						"update",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8097/api/v1/admins/delete/1",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8097/api/v1/admins/eliminar/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8097",
+					"path": [
+						"api",
+						"v1",
+						"admins",
+						"eliminar",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8093/api/v1/appointments",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8093/api/v1/appointments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8093",
+					"path": [
+						"api",
+						"v1",
+						"appointments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8094/api/v1/bills",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8094/api/v1/bills",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8094",
+					"path": [
+						"api",
+						"v1",
+						"bills"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8092/api/v1/doctors",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8092/api/v1/doctors",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8092",
+					"path": [
+						"api",
+						"v1",
+						"doctors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8095/api/v1/medical-record",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8095/api/v1/medical-record",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8095",
+					"path": [
+						"api",
+						"v1",
+						"medical-record"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8096/api/v1/notifications",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8096/api/v1/notifications",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8096",
+					"path": [
+						"api",
+						"v1",
+						"notifications"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8091/api/v1/patients",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8091/api/v1/patients",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8091",
+					"path": [
+						"api",
+						"v1",
+						"patients"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8092/api/v1/doctors/crear",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"John\",\r\n  \"lastName\": \"Doe\",\r\n  \"speciality\": \"Cardiology\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8092/api/v1/doctors/crear",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8092",
+					"path": [
+						"api",
+						"v1",
+						"doctors",
+						"crear"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8091/api/v1/patients",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Jane\",\r\n  \"lastName\": \"Doe\",\r\n  \"email\": \"jane.doe@example.com\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8091/api/v1/patients",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8091",
+					"path": [
+						"api",
+						"v1",
+						"patients"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8093/api/v1/appointments",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8093/api/v1/appointments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8093",
+					"path": [
+						"api",
+						"v1",
+						"appointments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8093/api/v1/appointments/search/1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8093/api/v1/appointments/search/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8093",
+					"path": [
+						"api",
+						"v1",
+						"appointments",
+						"search",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8093/api/v1/appointments",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"appointmentDate\": \"2024-08-10T10:00:00\",\r\n  \"reason\": \"Consulta general\",\r\n  \"patientId\": 2,  // Asegúrate de usar el ID correcto del paciente creado anteriormente\r\n  \"doctorId\": 2    // Asegúrate de usar el ID correcto del doctor creado anteriormente\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8093/api/v1/appointments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8093",
+					"path": [
+						"api",
+						"v1",
+						"appointments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8093/api/v1/appointments Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"appointmentDate\": \"2024-08-10T10:00:00\",\r\n  \"reason\": \"Consulta general\",\r\n  \"patientId\": 2,  // Asegúrate de usar el ID correcto del paciente creado anteriormente\r\n  \"doctorId\": 1    // Asegúrate de usar el ID correcto del doctor creado anteriormente\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8093/api/v1/appointments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8093",
+					"path": [
+						"api",
+						"v1",
+						"appointments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8093/api/v1/appointments/editar/1",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 1,\r\n  \"appointmentDate\": \"2024-08-11T11:00:00\",\r\n  \"reason\": \"Consulta de seguimiento\",\r\n  \"patientId\": 1,\r\n  \"doctorId\": 1\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8093/api/v1/appointments/editar/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8093",
+					"path": [
+						"api",
+						"v1",
+						"appointments",
+						"editar",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8093/api/v1/appointments/eliminar/1",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8093/api/v1/appointments/eliminar/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8093",
+					"path": [
+						"api",
+						"v1",
+						"appointments",
+						"eliminar",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8093/api/v1/appointments/patient/1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8093/api/v1/appointments/patient/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8093",
+					"path": [
+						"api",
+						"v1",
+						"appointments",
+						"patient",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8093/api/v1/appointments/doctor/1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8093/api/v1/appointments/doctor/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8093",
+					"path": [
+						"api",
+						"v1",
+						"appointments",
+						"doctor",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

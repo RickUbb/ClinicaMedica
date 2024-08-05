@@ -1,0 +1,23 @@
+server:
+  port: 8095
+
+spring:
+  application:
+    name: msvc-medicalrecord
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://medicalrecord-db:3306/medicalrecordDB
+    username: root
+    password: 1234
+  jpa:
+    hibernate:
+      ddl-auto: create
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://eureka-service:8761/eureka/
