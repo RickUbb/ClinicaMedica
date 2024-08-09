@@ -1,7 +1,7 @@
 package com.microservice.patient.service;
 
 import com.microservice.patient.entities.Patient;
-import com.microservice.patient.http.response.AppointmentByPacientResponse;
+import com.microservice.patient.http.AppointmentByPacientResponse;
 
 import java.util.List;
 

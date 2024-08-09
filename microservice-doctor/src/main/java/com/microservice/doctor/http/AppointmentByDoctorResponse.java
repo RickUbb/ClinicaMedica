@@ -1,4 +1,4 @@
-package com.microservice.doctor.http.response;
+package com.microservice.doctor.http;
 
 import com.microservice.doctor.dto.AppointmentDTO;
 import lombok.AllArgsConstructor;

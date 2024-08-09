@@ -25,13 +25,6 @@ services:
       - "8080:8080"
     depends_on:
       - eureka-service
-      - admin-service
-      - appointment-service
-      - billing-service
-      - doctor-service
-      - medicalrecord-service
-      - notification-service
-      - patient-service
     networks:
       - msvc-network
     restart: always
@@ -252,3 +245,4 @@ services:
 networks:
   msvc-network:
     driver: bridge
+

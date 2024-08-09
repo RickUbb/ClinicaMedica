@@ -17,7 +17,7 @@ spring:
 
 eureka:
   instance:
-    hostname: localhost
+    hostname: eureka-service
   client:
     service-url:
       defaultZone: http://eureka-service:8761/eureka/

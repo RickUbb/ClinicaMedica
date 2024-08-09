@@ -1,7 +1,7 @@
 package com.microservice.doctor.service;
 
 import com.microservice.doctor.entities.Doctor;
-import com.microservice.doctor.http.response.AppointmentByDoctorResponse;
+import com.microservice.doctor.http.AppointmentByDoctorResponse;
 
 import java.util.List;
 

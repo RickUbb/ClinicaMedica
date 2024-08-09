@@ -4,7 +4,7 @@ import com.microservice.doctor.client.AppointmentClient;
 import com.microservice.doctor.dto.AppointmentDTO;
 import com.microservice.doctor.entities.Doctor;
 import com.microservice.doctor.persistence.DoctorRepository;
-import com.microservice.doctor.http.response.AppointmentByDoctorResponse;
+import com.microservice.doctor.http.AppointmentByDoctorResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
